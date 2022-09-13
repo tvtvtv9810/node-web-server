@@ -1,0 +1,25 @@
+{
+  "name": "node-web-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup": "npm install express & npm install ejs & npm install csv-parse"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tvtvtv9810/node-web-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tvtvtv9810/node-web-server/issues"
+  },
+  "homepage": "https://github.com/tvtvtv9810/node-web-server#readme",
+  "dependencies": {
+    "csv-parse": "^5.3.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  }
+}
