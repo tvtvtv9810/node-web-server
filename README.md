@@ -11,8 +11,10 @@
 
 ## 使用ライブラリ
 * Express.js
-* ejs
+* ejs (Embedded JavaScript templates)
   - テンプレートエンジン
+  - https://ejs.co/
+  - https://www.npmjs.com/package/ejs
 * CSV parser for Node.js and the web
   - CSVファイルを読み込んでパースする
 
@@ -21,3 +23,11 @@
 1. > npm install express
 1. > npm install ejs
 1. > npm install csv-parse
+
+# TODO
+## 調べる
+- ejs-cli
+- gulp
+- webpack
+- parcel
+
