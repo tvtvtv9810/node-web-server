@@ -19,3 +19,15 @@ app.get("/", function(req, res, next){
 });
 
 
+app.get("/recipe/recipe-list", function(req, res, next){
+    res.render("recipe/recipe-list", {});
+});
+
+
+const recipeApi = require("./api/recipe/api-recipe.js");
+app.get("/test", function(req, res, next){
+
+    const recipeList = recipeApi.getList();
+    res.json(recipeList);
+    res.end();
+});
