@@ -13,21 +13,28 @@ var server = app.listen(port, function(){
     console.log("Node.js is listening to PORT:" + server.address().port);
 });
 
-// "/"へのGETリクエストで"views/top.ejs"を表示する。※拡張子（.ejs）は省略されていることに注意。
-app.get("/", function(req, res, next){
+/*
+ *  GET : "/" 
+ */
+app.get("/", function (req, res, next) {
+    // top.ejs
     res.render("top", {});
 });
 
-
+/**
+ * GET : 一覧表示
+ */
 app.get("/recipe/recipe-list", function(req, res, next){
     res.render("recipe/recipe-list", {});
 });
 
-
+/**
+ * GET : 
+ */
 const recipeApi = require("./api/recipe/api-recipe.js");
-app.get("/test", function(req, res, next){
+app.get("/api/recipe-list", function(req, res, next){
 
-    const recipeList = recipeApi.getList();
+    const recipeList = recipeApi.getRecipeList();
     res.json(recipeList);
     res.end();
 });
