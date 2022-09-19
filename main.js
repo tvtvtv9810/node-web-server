@@ -31,7 +31,7 @@ app.get("/recipe/recipe-list", function(req, res, next){
 /**
  * GET : 
  */
-const recipeApi = require("./api/recipe/api-recipe.js");
+const recipeApi = require("./server/service/recipe-service.js");
 app.get("/api/recipe-list", function(req, res, next){
 
     const recipeList = recipeApi.getRecipeList();

@@ -7,7 +7,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "NodeWebServer",
             "skipFiles": [
                 "<node_internals>/**"
             ],

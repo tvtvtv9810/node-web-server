@@ -1,4 +1,7 @@
 "use strict"
+/*
+ * recipe関連のservice
+ */
 
 const fileUtil = require("../common/fileUtil.js");
 
@@ -7,5 +10,5 @@ const fileUtil = require("../common/fileUtil.js");
  * @returns 
  */
 exports.getRecipeList = function() {
-    return fileUtil.getFileList(process.cwd() + "\\data\\recipe");
+    return fileUtil.getCsvFileList("\\data\\recipe\\");
 }
