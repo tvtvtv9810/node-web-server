@@ -3,12 +3,12 @@
  * recipe関連のservice
  */
 
-const fileUtil = require("../common/fileUtil.js");
 
 /**
  * 
  * @returns 
  */
 exports.getRecipeList = function() {
+    const fileUtil = require("../common/fileUtil.js");
     return fileUtil.getCsvFileList("\\data\\recipe\\");
 }
