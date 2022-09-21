@@ -4,10 +4,12 @@
  * mappingを追加します。
  * @param {*} app 
  */
-exports.addMapping = function(app){
+ export const addMapping = function(app) {
     addMappingTemplate(app);
     addMappingApi(app);
 }
+
+export default addMapping;
 
 /**
  * View
@@ -23,15 +25,19 @@ function addMappingTemplate(app) {
   });
 }
 
+import recipeApi from "../service/recipe-service.js";
 /**
  * API
  * @param {*} app 
  */
 function addMappingApi(app) {
-  const recipeApi = require("../service/recipe-service.js");
+
+  /**
+   * 
+   */
   app.get("/api/recipe-list", function(req, res, next){
     const recipeList = recipeApi.getRecipeList();
     res.json(recipeList);
     res.end();
   });
-}
+  }

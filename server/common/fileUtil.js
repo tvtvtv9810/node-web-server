@@ -3,14 +3,14 @@
 /*
  * ファイル関連のUtil
  */
-var fs = require('fs');
+import fs from 'fs';
 
 /**
  * CSVファイル一覧
  * @param {*} dirPath ディレクトリ（rootからの）パス
  * @returns CSVファイル一覧
  */
-exports.getCsvFileList = function(dirPath){
+ export function getCsvFileList(dirPath) {
 
   // ルートパス
   const rootPath = process.cwd();
@@ -36,3 +36,5 @@ exports.getCsvFileList = function(dirPath){
     return fileList;
   });
 }
+
+export default getCsvFileList;

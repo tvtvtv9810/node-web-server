@@ -1,6 +1,9 @@
 "use strict";
 
-const express = require("express");
+console.log(typeof module);
+
+// const express = require("express");
+import express from 'express';
 
 const port = 3000;
 
@@ -9,6 +12,11 @@ let app = express();
 app.use(express.static('static'));
 // View EngineにEJSを指定
 app.set('view engine', 'ejs');
+
+
+let server = app.listen(port, function(){
+    console.log("Node.js is listening to PORT:" + server.address().port);
+});
 
 
 /*
@@ -22,31 +30,6 @@ app.get("/", function (req, res, next) {
 /**
  * 
  */
-const recipeController = require("./server/controller/recipe-controller.js");
-recipeController.addMapping(app);
-
-
-
-let server = app.listen(port, function(){
-    console.log("Node.js is listening to PORT:" + server.address().port);
-});
-
-
-
-// /**
-//  * GET : 一覧表示
-//  */
-// app.get("/recipe/recipe-list", function(req, res, next){
-//     res.render("recipe/recipe-list", {});
-// });
-
-// /**
-//  * GET : 
-//  */
-// const recipeApi = require("./server/service/recipe-service.js");
-// app.get("/api/recipe-list", function(req, res, next){
-
-//     const recipeList = recipeApi.getRecipeList();
-//     res.json(recipeList);
-//     res.end();
-// });
+// const recipeController = require("./server/controller/recipe-controller.js");
+import addMapping from './server/controller/recipe-controller.js';
+addMapping(app);
