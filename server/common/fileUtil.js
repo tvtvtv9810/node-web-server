@@ -1,8 +1,9 @@
 "use strict"
-
 /*
  * ファイル関連のUtil
  */
+export default getCsvFileList;
+
 import fs from 'fs';
 
 /**
@@ -10,7 +11,7 @@ import fs from 'fs';
  * @param {*} dirPath ディレクトリ（rootからの）パス
  * @returns CSVファイル一覧
  */
- export function getCsvFileList(dirPath) {
+function getCsvFileList(dirPath) {
 
   // ルートパス
   const rootPath = process.cwd();
@@ -36,5 +37,3 @@ import fs from 'fs';
     return fileList;
   });
 }
-
-export default getCsvFileList;
