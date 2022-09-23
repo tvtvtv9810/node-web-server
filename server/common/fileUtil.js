@@ -2,16 +2,16 @@
 /*
  * ファイル関連のUtil
  */
-export default getCsvFileList;
+export default getCsvFileNameList;
 
 import fs from 'fs';
 
 /**
- * CSVファイル一覧
+ * CSVファイル名一覧
  * @param {*} dirPath ディレクトリ（rootからの）パス
- * @returns CSVファイル一覧
+ * @returns CSVファイル名一覧
  */
-function getCsvFileList(dirPath) {
+function getCsvFileNameList(dirPath) {
 
   // ルートパス
   const rootPath = process.cwd();
@@ -26,7 +26,7 @@ function getCsvFileList(dirPath) {
   const filterFileExtensionRegex = new  RegExp(".*\." + filterFileExtension + "$");
 
   // ディレクトリ：ファイルの一覧読込
-  fs.readdir(targetDirFullPath, function(err, files){ 
+  return fs.readdirSync(targetDirFullPath, function(err, files){ 
     if (err) { throw err; }
 
     console.log(files);

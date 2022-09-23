@@ -1,6 +1,6 @@
 "use strict"
 
-import getRecipeList from "../service/recipe-service.js";
+import getRecipeFileNameList from "../service/recipe-service.js";
 
 /**
  * mappingを追加します。
@@ -36,7 +36,7 @@ function addMappingApi(app) {
    * recipe一覧取得
    */
   app.get("/api/recipe-file-name-list", function(req, res, next){
-    const recipeList = getRecipeList();
+    const recipeList = getRecipeFileNameList();
     res.json(recipeList);
     res.end();
   });
