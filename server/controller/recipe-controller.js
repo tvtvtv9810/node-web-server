@@ -24,6 +24,12 @@ function addMappingTemplate(app) {
     res.render("recipe/recipe-list", {});
   });
   
+  /**
+   * GET : 一覧表示画面
+   */
+  app.get("/recipe/recipe-detail", function(req, res, next){
+    res.render("recipe/recipe-detail", {});
+  });
 }
 
 /**
