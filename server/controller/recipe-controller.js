@@ -47,6 +47,11 @@ function addMappingApi(app) {
     res.end();
   });
   
+  
+  app.get("/api/recipe-detail", function (req, res, next) {
+    
+  });
+
 }
 
 // 外部公開

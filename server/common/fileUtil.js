@@ -37,3 +37,11 @@ function getCsvFileNameList(dirPath) {
     return fileList;
   });
 }
+
+/**
+ * 
+ * @param {*} path 
+ */
+function getCsvFileData(path) {
+  // todo:
+}
