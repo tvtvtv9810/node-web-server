@@ -2,16 +2,16 @@
 /*
  * ファイル関連のUtil
  */
-export default getCsvFileNameList;
-
 import fs from 'fs';
+// オブジェクトの分割代入：const parse = require('csv-parse/sync').parse;
+import { parse } from 'csv-parse/sync';
 
 /**
  * CSVファイル名一覧
  * @param {*} dirPath ディレクトリ（rootからの）パス
  * @returns CSVファイル名一覧
  */
-function getCsvFileNameList(dirPath) {
+export function getCsvFileNameList(dirPath) {
 
   // ルートパス
   const rootPath = process.cwd();
@@ -39,9 +39,45 @@ function getCsvFileNameList(dirPath) {
 }
 
 /**
- * 
- * @param {*} path 
+ * CSVファイル内のデータ
+ * （※１行分データ配列×行数分配列）
+ * @param {*} filePath ディレクトリ（rootからの）パス
+ * @returns CSVファイルデータ
  */
-function getCsvFileData(path) {
-  // todo:
+export function getCsvFileData(filePath) {
+  // ルートパス
+  const rootPath = process.cwd();
+  // 対象ディレクトリパス
+  const targetFileFullPath = rootPath + filePath;
+
+  // CSVファイル読込
+  const buffer = fs.readFileSync(targetFileFullPath);
+    // パース
+  const options = { escape: '\\' };
+  const { ok, err } = canParse(buffer, options);
+  
+  if (ok) {
+    const rows = parse(buffer, options);
+    // console.info(rows);
+    return rows;
+  } else {
+    console.error(err);
+  }
+}
+
+/**
+ * CSVデータをパース
+ * @param {*} data データ
+ * @param {*} options オプション
+ * @returns パース結果
+ */
+function canParse (data, options) {
+ let ok, message
+
+  try {
+    parse(data, options)
+    return {ok: true, err: null}
+  } catch (err) {
+    return {ok: false, err}
+  }
 }

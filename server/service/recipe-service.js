@@ -2,15 +2,16 @@
 /*
  * recipe関連のservice
  */
-import getCsvFileNameList from '../common/fileUtil.js';
+import { getCsvFileNameList, getCsvFileData } from '../common/fileUtil.js';
 
+/* データパス */
 const recipeDataDir = "\\data\\recipe\\";
 
 /**
  * recipeファイル名リスト
  * @returns ファイル名リスト
  */
-const getRecipeFileNameList = function() {
+export const getRecipeFileNameList = function() {
   return getCsvFileNameList(recipeDataDir);
 }
 
@@ -19,9 +20,12 @@ const getRecipeFileNameList = function() {
  * @param {*} fileName 
  * @returns 
  */
-const getRecipeDetail= function(fileName) {
-  return 
-}
+export const getRecipeDetail = function (fileName) {
+  
+  const data = getCsvFileData(recipeDataDir + fileName);
 
-// 外部公開
-export { getRecipeFileNameList, getRecipeDetail };
+  console.log(data);
+
+
+  return "TODO:成型して返却";
+}

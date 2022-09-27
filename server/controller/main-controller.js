@@ -1,10 +1,12 @@
 "use strict"
 
+import { addMapping as recipeAddMapping } from './recipe-controller.js'
+
 /**
  * mappingを追加します。
  * @param {*} app 
  */
-const addMapping = function (app) {
+export const addMapping = function (app) {
   addMappingView(app);
   addMappingApi(app);
 
@@ -36,7 +38,6 @@ function addMappingApi(app) {
   // 今のところなし
 }
 
-import recipeAddMapping from './recipe-controller.js'
 /**
  * recipe 関連
  * @param {*} app 
@@ -44,6 +45,3 @@ import recipeAddMapping from './recipe-controller.js'
 function addMappingRecipe(app) {
   recipeAddMapping(app);
 }
-
-// 外部公開
-export default addMapping;

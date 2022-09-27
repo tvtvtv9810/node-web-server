@@ -1,7 +1,7 @@
 "use strict";
 
 import express from 'express';
-import addMapping from './server/controller/main-controller.js'
+import { addMapping } from './server/controller/main-controller.js'
 
 const port = 3000;
 
