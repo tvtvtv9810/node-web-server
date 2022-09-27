@@ -34,7 +34,7 @@ $(function () {
       // console.log(element);
       $target.append(
         `
-        <li><a href="./recipe-detail?file-name=${fileName}">${fileName}</a></li>
+        <li><a href="./recipe-detail?file_name=${fileName}">${fileName}</a></li>
         `)
     });
 

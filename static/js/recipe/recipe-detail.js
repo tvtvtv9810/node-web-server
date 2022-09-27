@@ -21,7 +21,7 @@ $(function () {
   }
   
   const paramList = getParamList();
-  const targetFileName = getParam(paramList, 'file-name');
+  const targetFileName = getParam(paramList, 'file_name');
 
   $('title').html(targetFileName);
 

@@ -27,8 +27,15 @@ function addMappingTemplate(app) {
   /**
    * GET : 一覧表示画面
    */
-  app.get("/recipe/recipe-detail", function(req, res, next){
-    res.render("recipe/recipe-detail", {});
+  app.get("/recipe/recipe-detail", function (req, res, next) {
+    // クエリパラメータ取得
+    const fileName = req.query.file_name;
+
+    res.render("recipe/recipe-detail",
+      {
+        fileName: fileName,
+        test: "testあああ"
+      });
   });
 }
 
