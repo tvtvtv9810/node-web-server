@@ -1,6 +1,6 @@
 "use strict"
 
-import { getRecipeFileNameList } from "../service/recipe-service.js";
+import { getRecipeFileNameList, getRecipeDetail } from "../service/recipe-service.js";
 
 /**
  * mappingを追加します。
@@ -31,6 +31,10 @@ function addMappingTemplate(app) {
     // クエリパラメータ取得
     const fileName = req.query.file_name;
 
+    const recipeData = getRecipeDetail(fileName);
+
+    console.log(recipeData);
+
     res.render("recipe/recipe-detail",
       {
         fileName: fileName,
@@ -58,7 +62,7 @@ function addMappingApi(app) {
    * recipe詳細
    */
   app.get("/api/recipe-detail", function (req, res, next) {
-    // getRecipeDetail
+    // ..TODO...ajaxで取得しなくてもよいか..
   });
 
 }

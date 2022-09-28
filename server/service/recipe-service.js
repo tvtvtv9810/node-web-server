@@ -22,10 +22,43 @@ export const getRecipeFileNameList = function() {
  */
 export const getRecipeDetail = function (fileName) {
   
-  const data = getCsvFileData(recipeDataDir + fileName);
+  const rowDataList = getCsvFileData(recipeDataDir + fileName);
+  return convert(rowDataList);
+}
 
-  console.log(data);
+function convert(rowDataList) {
+
+  const genre = [];
+  const whos = [];
+  const mainIngredients = [];
+  const recipeName = [];
+  const ingredients = [];
+  const quantity = [];
+  const procedure = [];
+  const tipsMemo = [];
 
 
-  return "TODO:成型して返却";
+  rowDataList.forEach(rowData => {
+     genre.push(rowData["ジャンル"]);
+     whos.push(rowData["誰のレシピ"]);
+     mainIngredients.push(rowData["メイン食材"]);
+     recipeName.push(rowData["料理名"]);
+     ingredients.push(rowData["材料"]);
+     quantity.push(rowData["数量"]);
+     procedure.push(rowData["作り方"]);
+     tipsMemo.push(rowData["コツ・メモ"]);
+  });
+
+  return {
+    genre: genre[0],
+    whos: whos[0],
+    mainIngredients: mainIngredients,
+    recipeName: recipeName[0],
+    ingredients: ingredients,
+    quantity: quantity, 
+    procedure: procedure,
+    tipsMemo: tipsMemo,
+
+
+  }
 }

@@ -53,7 +53,11 @@ export function getCsvFileData(filePath) {
   // CSVファイル読込
   const buffer = fs.readFileSync(targetFileFullPath);
     // パース
-  const options = { escape: '\\' };
+  const options = {
+    escape: '\\',
+    // from_line: 2,
+    columns: true,
+  };
   const { ok, err } = canParse(buffer, options);
   
   if (ok) {
