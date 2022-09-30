@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 600px;
+}
+
+div {
+  border: 2px dotted #aa0000;
+}
+
+header, footer, nav, main, section, article, aside {
+  display: block;
+}
+
+header {
+  /* display: block; */
+  display: flex;
+  gap: 24px;
+
+  width: 600px;
+  height: 60px;
+  background: #c0c0c0;
+}
+
+header .main_ingredients {
+  width: 60px;
+}
+
+nav {
+  width: 600px;
+  height: 30px;
+  background: #8e8e8e;
+}
+
+main {
+  float: left;
+  width: 450px;
+  height: 250px;
+  background: #f5f5dc;
+}
+
+aside {
+  float: left;
+  width: 150px;
+  height: 250px;
+  background: #ebebbd;
+}
+
+footer {
+  clear: both;
+  width: 600px;
+  height: 60px;
+  background: #c0c0c0;
+}
