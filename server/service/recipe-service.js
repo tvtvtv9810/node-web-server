@@ -33,20 +33,22 @@ function convert(rowDataList) {
   const mainIngredients = [];
   const recipeName = [];
   const ingredients = [];
+  const ingredientsQuantity = [];
   const quantity = [];
   const procedure = [];
   const tipsMemo = [];
 
 
   rowDataList.forEach(rowData => {
-     genre.push(rowData["ジャンル"]);
-     whos.push(rowData["誰のレシピ"]);
-     mainIngredients.push(rowData["メイン食材"]);
-     recipeName.push(rowData["料理名"]);
-     ingredients.push(rowData["材料"]);
-     quantity.push(rowData["数量"]);
-     procedure.push(rowData["作り方"]);
-     tipsMemo.push(rowData["コツ・メモ"]);
+    genre.push(rowData["ジャンル"]);
+    whos.push(rowData["誰のレシピ"]);
+    mainIngredients.push(rowData["メイン食材"]);
+    recipeName.push(rowData["料理名"]);
+    ingredientsQuantity.push(rowData["材料の後ろの()"]);
+    ingredients.push(rowData["材料"]);
+    quantity.push(rowData["数量"]);
+    procedure.push(rowData["作り方"]);
+    tipsMemo.push(rowData["コツ・メモ"]);
   });
 
   return {
@@ -54,6 +56,7 @@ function convert(rowDataList) {
     whos: whos[0],
     mainIngredients: mainIngredients,
     recipeName: recipeName[0],
+    ingredientsQuantity: ingredientsQuantity[0],
     ingredients: ingredients,
     quantity: quantity, 
     procedure: procedure,

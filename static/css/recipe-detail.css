@@ -8,7 +8,7 @@ body {
 }
 
 div {
-  border: 2px dotted #aa0000;
+  border: 0.1px dotted #aa0000;
 }
 
 header, footer, nav, main, section, article, aside {
@@ -29,24 +29,37 @@ header .main_ingredients {
   width: 60px;
 }
 
-nav {
-  width: 600px;
-  height: 30px;
-  background: #8e8e8e;
-}
-
 main {
-  float: left;
-  width: 450px;
-  height: 250px;
-  background: #f5f5dc;
+  /* display: flex; */
+  /* float: left; */
+  /* width: 450px; */
+  /* height: 250px; */
+  /* background: #f5f5dc; */
 }
 
-aside {
+main .ingredients {
+  /* display: flex; */
+}
+
+main .ingredients .list {
+  display: flex;
+  gap: 64px;
+
+  /* aside {
   float: left;
   width: 150px;
   height: 250px;
   background: #ebebbd;
+*/
+}
+
+main .ingredients .right {
+  /* aside {
+  float: left;
+  width: 150px;
+  height: 250px;
+  background: #ebebbd;
+*/
 }
 
 footer {
