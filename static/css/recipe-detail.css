@@ -53,7 +53,7 @@ main .ingredients .list {
 */
 }
 
-main .ingredients .right {
+main .ingredients .ingredients {
   /* aside {
   float: left;
   width: 150px;
@@ -62,9 +62,18 @@ main .ingredients .right {
 */
 }
 
-footer {
+main .procedure .list {
+  margin-left: 24px;
+}
+
+main .tipsMemo .list {
+  margin-left: 24px;
+
+}
+
+/* footer {
   clear: both;
   width: 600px;
   height: 60px;
   background: #c0c0c0;
-}
+} */
