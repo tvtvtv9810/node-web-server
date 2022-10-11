@@ -1,15 +1,20 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
+} */
+oi, ol {
+  margin: 0;
+  /* padding: 0; */
+  padding: 0 0 0 16px;
 }
 
 body {
   width: 600px;
 }
 
-div {
+/* div {
   border: 0.1px dotted #aa0000;
-}
+} */
 
 header, footer, nav, main, section, article, aside {
   display: block;
@@ -22,11 +27,23 @@ header {
 
   width: 600px;
   height: 60px;
-  background: #c0c0c0;
+  /* background: #c0c0c0; */
+}
+
+header .title {
+  width: 216px;
+}
+
+header .genre {
+  width: 40px;
 }
 
 header .main_ingredients {
-  width: 60px;
+  width: 216px;
+}
+
+header .whos {
+  /* width: 60px; */
 }
 
 main {
@@ -66,14 +83,34 @@ main .procedure .list {
   margin-left: 24px;
 }
 
-main .tipsMemo .list {
+main .tips_memo .title {
+  position: relative;
+  border-top: solid 2px #80c8d1;
+  border-bottom: solid 2px #80c8d1;
+  background: #f4f4f4;
+  line-height: 1.4;
+  padding: 0.4em 0.5em;
+  margin: 2em 0 0.5em;
+}
+
+main .tips_memo .title::after {
+  /*タブ*/
+  position: absolute;
+  font-family: "Font Awesome 5 Free", 'Quicksand', 'Avenir', 'Arial', sans-serif;
+  font-weight: 900;
+  content: '\f0a7\ POINT';
+  background: #80c8d1;
+  color: #fff;
+  left: 0px;
+  bottom: 100%;
+  border-radius: 5px 5px 0 0;
+  padding: 5px 7px 3px;
+  font-size: 0.7em;
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+main .tips_memo .list {
   margin-left: 24px;
 
 }
-
-/* footer {
-  clear: both;
-  width: 600px;
-  height: 60px;
-  background: #c0c0c0;
-} */
