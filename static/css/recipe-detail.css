@@ -10,6 +10,13 @@ oi, ol {
 
 body {
   width: 600px;
+  font-family: sans-serif;
+  font-size: 12px;
+  ;
+}
+
+.title {
+  font-size: 14px;
 }
 
 header, footer, nav, main, section, article, aside {
@@ -24,51 +31,66 @@ header {
 
 /** 料理名 */
 header .dish_name {
-  width: 224px;
+  width: 254px;
   font-weight: bold;
   font-size: large;
   /* vertical-align: middle;
   text-align: center; */
 
   position: relative;
-  background: #dfefff;
-  box-shadow: 0px 0px 0px 5px #dfefff;
-  border: dashed 2px white;
-  padding: 0.6em 0.8em;
-  color: #454545;
+  padding: 0.25em 1em;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+}
+
+header .dish_name:before,
+header .dish_name:after {
+  content: '';
+  position: absolute;
+  top: -7px;
+  width: 2px;
+  height: -webkit-calc(100% + 14px);
+  height: calc(100% + 14px);
+  background-color: black;
+}
+
+header .dish_name:before {
+  left: 7px;
 }
 
 header .dish_name:after {
-  position: absolute;
-  content: '';
-  left: -7px;
-  top: -7px;
-  border-width: 0 0 15px 15px;
-  border-style: solid;
-  border-color: #fff #fff #a8d4ff;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  right: 7px;
 }
 
+
 header .genre {
-  width: 40px;
+  width: 60px;
 }
+
+/* header .genre div {
+  text-align: center;
+} */
 
 header .main_ingredients {
   width: 216px;
 }
 
 header .whos {
-  /* width: 60px; */
+  position: relative;
+  padding: 0.6em;
+  background: #e0edff;
 }
 
-main {
-  /* display: flex; */
-  /* float: left; */
-  /* width: 450px; */
-  /* height: 250px; */
-  /* background: #f5f5dc; */
+header .whos:after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 30px;
+  border: 15px solid transparent;
+  border-top: 15px solid #e0edff;
+  width: 0;
+  height: 0;
 }
-
 
 
 /** 材料 */
@@ -122,24 +144,6 @@ main .tips_memo .title {
   line-height: 1.4;
   padding: 0.4em 0.5em;
   margin: 2em 0 0.5em;
-}
-
-/** > タブ */
-main .tips_memo .title::after {
-  position: absolute;
-  /* font-family: "Font Awesome 5 Free", 'Quicksand', 'Avenir', 'Arial', sans-serif; */
-  font-weight: 900;
-  /* content: '\f0a7\ POINT'; */
-  content: 'POINT';
-  background: #80c8d1;
-  color: #fff;
-  left: 0px;
-  bottom: 100%;
-  border-radius: 5px 5px 0 0;
-  padding: 5px 7px 3px;
-  font-size: 0.7em;
-  line-height: 1;
-  letter-spacing: 0.05em;
 }
 
 main .tips_memo .list {
