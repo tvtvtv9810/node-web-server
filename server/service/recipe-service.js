@@ -38,21 +38,32 @@ function convert(rowDataList) {
   const procedure = [];
   const tipsMemo = [];
 
+  // console.log("-------------");
+  // console.log(rowDataList);
+  // console.log("-------------");
+  // rowDataList.forEach(rowData => {
+  //   rowData.test = "test_XXX";
+  //   console.log(rowData['ジャンル']);
+  //   console.log(rowData['誰のレシピ']);
+  //   console.log(rowData['test']);
+  //   console.log(rowData['x'])
+  // });
+  // console.log("-------------");
 
   rowDataList.forEach(rowData => {
-    genre.push(rowData["ジャンル"]);
-    whos.push(rowData["誰のレシピ"]);
-    mainIngredients.push(rowData["メイン食材"]);
-    recipeName.push(rowData["料理名"]);
-    ingredientsQuantity.push(rowData["材料の後ろの()"]);
-    ingredients.push(rowData["材料"]);
-    quantity.push(rowData["数量"]);
-    procedure.push(rowData["作り方"]);
-    tipsMemo.push(rowData["コツ・メモ"]);
+    pushToList(genre, rowData["ジャンル"]);
+    pushToList(whos, rowData["誰のレシピ"]);
+    pushToList(mainIngredients, rowData["メイン食材"]);
+    pushToList(recipeName, rowData["料理名"]);
+    pushToList(ingredientsQuantity, rowData["材料の後ろの()"]);
+    pushToList(ingredients, rowData["材料"]);
+    pushToList(quantity, rowData["数量"]);
+    pushToList(procedure, rowData["作り方"]);
+    pushToList(tipsMemo, rowData["コツ・メモ"]);
   });
 
   return {
-    genre: genre[0],
+    genre: genre,
     whos: whos[0],
     mainIngredients: mainIngredients,
     recipeName: recipeName[0],
@@ -61,7 +72,11 @@ function convert(rowDataList) {
     quantity: quantity, 
     procedure: procedure,
     tipsMemo: tipsMemo,
+  }
+}
 
-
+function pushToList(list, value) {
+  if (value != null && value.trim().length != 0) {
+    list.push(value);
   }
 }

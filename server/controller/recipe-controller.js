@@ -35,11 +35,11 @@ function addMappingTemplate(app) {
 
     console.log(recipeData);
 
-    res.render("recipe/recipe-detail",
+    res.render("recipe/recipe-detail", 
       {
-        fileName: fileName,
-        test: "testあああ"
-      });
+        recipeData: recipeData,
+      }
+    );
   });
 }
 
