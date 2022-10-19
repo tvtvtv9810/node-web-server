@@ -23,8 +23,8 @@ $(function () {
   const paramList = getParamList();
   const targetFileName = getParam(paramList, 'file_name');
 
-  $('title').html(targetFileName);
+  // $('title').html(targetFileName);
 
-  $('#recipe_detail .fileName').html(targetFileName);
+  // $('#recipe_detail .fileName').html(targetFileName);
 
 })
