@@ -31,40 +31,62 @@ header {
 
 /** 料理名 */
 header .dish_name {
-  width: 254px;
-  font-weight: bold;
-  font-size: large;
+  /* width: 254px; */
+  /* font-weight: bold; */
+  /* font-size: large; */
   /* vertical-align: middle;
   text-align: center; */
 
+  display: inline-block;
   position: relative;
-  padding: 0.25em 1em;
-  border-top: solid 2px black;
-  border-bottom: solid 2px black;
+  height: 50px;
+  /*リボンの高さ*/
+  line-height: 50px;
+  /*リボンの高さ*/
+  text-align: center;
+  padding: 0 30px;
+  /*横の大きさ*/
+  font-size: 18px;
+  /*文字の大きさ*/
+  background: #f57a78;
+  /*塗りつぶし色*/
+  color: #FFF;
+  /*文字色*/
+  box-sizing: border-box;
 }
 
 header .dish_name:before,
 header .dish_name:after {
-  content: '';
   position: absolute;
-  top: -7px;
-  width: 2px;
-  height: -webkit-calc(100% + 14px);
-  height: calc(100% + 14px);
-  background-color: black;
+  content: '';
+  width: 0px;
+  height: 0px;
+  z-index: 1;
 }
 
 header .dish_name:before {
-  left: 7px;
+  top: 0;
+  left: 0;
+  border-width: 25px 0px 25px 15px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
 }
 
 header .dish_name:after {
-  right: 7px;
+  top: 0;
+  right: 0;
+  border-width: 25px 15px 25px 0px;
+  border-color: transparent #fff transparent transparent;
+  border-style: solid;
 }
 
+header .sub_info {
+  display: flex;
+  gap: 4px;
+}
 
 header .genre {
-  width: 68px;
+  /* width: 68px; */
   padding: 4px;
   border: solid 1px #000;
   border-radius: 4px;
@@ -75,7 +97,7 @@ header .genre {
 } */
 
 header .main_ingredients {
-  width: 216px;
+  /* width: 216px; */
   padding: 4px;
   border: solid 1px #000;
   border-radius: 4px;
@@ -84,20 +106,21 @@ header .main_ingredients {
 header .whos {
   position: relative;
   padding: 0.6em;
-  background: #e0edff;
+  /* background: #e0edff; */
+  border: solid 1px #000;
+  border-radius: 4px;
 }
 
-header .whos:after {
+/* header .whos:after {
   position: absolute;
   content: '';
   top: 100%;
   left: 30px;
   border: 15px solid transparent;
-  border-top: 15px solid #e0edff;
+  border-top: 15px solid #000;
   width: 0;
   height: 0;
-}
-
+} */
 
 /** 材料 */
 main .ingredients .title {

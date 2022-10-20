@@ -8,22 +8,22 @@
 <body id="recipe_detail">
   <div class="fileName"></div>
   <header>
-    <div class="dish_name">
-      <span><%= recipeData.recipeName %></span>
-    </div>
-    <div class="genre">
-      <% recipeData.genre.forEach(function (value) { %>
-        <div><%= value %></div>
+    <div class="dish_name"><%= recipeData.recipeName %></div>
+    <div class="sub_info">
+      <div class="genre">
+        <% recipeData.genre.forEach(function (value) { %>
+          <div><%= value %></div>
       <% }); %>
     </div>
     <div class="main_ingredients">
       <ol>
         <% recipeData.mainIngredients.forEach(function (value) { %>
           <li><%= value %></li>
-        <% }); %>
-      </ol>
+          <% }); %>
+        </ol>
+      </div>
+      <div class="whos"><%= recipeData.whos %></div>
     </div>
-    <div class="whos"><%= recipeData.whos %></div>
   </header>
   
   <main>
@@ -31,39 +31,29 @@
       <div class="title">材料（<%= recipeData.ingredientsQuantity %>）</div>
       <div class="list">
         <div class="ingredients_col">
-          <% for (var i = 0; i < 6 && i < recipeData.ingredients.length ; i++) { %>
+          <% const oneRowNum = Math.ceil(recipeData.ingredients.length / 2); %>
+
+
+          <% for (var i = 0; i <= oneRowNum ; i++) { %>
           <%   const ingredient = recipeData.ingredients[i]; %>
-          <div>・<%= ingredient %></div>
+          <div><%= ingredient %></div>
           <% } %>
         </div>
         <div class="ingredients_col_unit">
-          <% for (var i = 0; i < 6 && i < recipeData.quantity.length ; i++) { %>
+          <% for (var i = 0; i <= oneRowNum ; i++) { %>
           <%   const quantity_ = recipeData.quantity[i]; %>
           <div><%= quantity_ %></div>
           <% } %>
         </div>
           
         <div class="ingredients_col">
-          <% for (var i = 5; i < 11 && i < recipeData.ingredients.length ; i++) { %>
+          <% for (var i = oneRowNum + 1; i < recipeData.ingredients.length ; i++) { %>
           <%   const ingredient = recipeData.ingredients[i]; %>
-          <div>・<%= ingredient %></div>
+          <div><%= ingredient %></div>
           <% } %>
         </div>
         <div class="ingredients_col_unit">
-          <% for (var i = 5; i < 11 && i < recipeData.quantity.length ; i++) { %>
-          <%   const quantity_ = recipeData.quantity[i]; %>
-          <div><%= quantity_ %></div>
-          <% } %>
-        </div>
-
-        <div class="ingredients_col">
-          <% for (var i = 10; i < 16 && i < recipeData.ingredients.length ; i++) { %>
-          <%   const ingredient = recipeData.ingredients[i]; %>
-          <div>・<%= ingredient %></div>
-          <% } %>
-        </div>
-        <div class="ingredients_col_unit">
-          <% for (var i = 10; i < 16 && i < recipeData.quantity.length ; i++) { %>
+          <% for (var i = oneRowNum + 1; i < recipeData.quantity.length ; i++) { %>
           <%   const quantity_ = recipeData.quantity[i]; %>
           <div><%= quantity_ %></div>
           <% } %>
