@@ -8,22 +8,22 @@
 <body id="recipe_detail">
   <div class="fileName"></div>
   <header>
-    <div class="dish_name"><%= recipeData.recipeName %></div>
-    <div class="sub_info">
-      <div class="genre">
-        <% recipeData.genre.forEach(function (value) { %>
-          <div><%= value %></div>
+    <div class="dish_name">
+      <%= recipeData.recipeName %>
+    </div>
+    <div class="genre">
+      <% recipeData.genre.forEach(function (value) { %>
+        <div><%= value %></div>
       <% }); %>
     </div>
     <div class="main_ingredients">
       <ol>
         <% recipeData.mainIngredients.forEach(function (value) { %>
           <li><%= value %></li>
-          <% }); %>
-        </ol>
-      </div>
-      <div class="whos"><%= recipeData.whos %></div>
+        <% }); %>
+      </ol>
     </div>
+    <div class="whos"><%= recipeData.whos %></div>
   </header>
   
   <main>
