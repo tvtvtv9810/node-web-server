@@ -5,7 +5,7 @@
 import { getCsvFileNameList, getCsvFileData } from '../common/fileUtil.js';
 
 /* データパス */
-const recipeDataDir = "\\data\\recipe\\";
+const recipeDataDir = "/data/recipe/";
 
 /**
  * recipeファイル名リスト
