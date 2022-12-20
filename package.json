@@ -6,7 +6,7 @@
   "main": "./main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "setup": "npm install express & npm install ejs & npm install csv-parse"
+    "setup": "npm install express & npm install ejs & npm install csv-parse & npm install sqlite3"
   },
   "repository": {
     "type": "git",
@@ -19,8 +19,9 @@
   },
   "homepage": "https://github.com/tvtvtv9810/node-web-server#readme",
   "dependencies": {
-    "csv-parse": "^5.3.0",
+    "csv-parse": "^5.3.2",
     "ejs": "^3.1.8",
-    "express": "^4.18.1"
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.2"
   }
 }

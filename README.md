@@ -34,6 +34,8 @@
   - CSV ファイルを読み込んでパースする
 - xlsx (SheetJs)
   - xlss ファイルを読み込む
+- sqlight3
+  - db
 
 ## 手順
 
@@ -41,6 +43,7 @@
 1. > npm install express
 1. > npm install ejs
 1. > npm install csv-parse
+1. > npm install sqlite3
 
 # メモ
 
